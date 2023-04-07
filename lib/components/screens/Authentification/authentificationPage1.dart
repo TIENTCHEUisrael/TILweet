@@ -166,27 +166,42 @@ class _AuthPage1State extends State<AuthPage1> {
               Container(
                 margin: const EdgeInsets.symmetric(
                   vertical: 5,
+                  horizontal: 14,
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      'Vous avez déja un compte?',
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontSize: 15,
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Connectez-vous',
-                        style: GoogleFonts.poppins(
-                          color: Colors.blue,
+                    Row(
+                      children: [
+                        Text(
+                          'Vous avez déja un compte?',
+                          style: GoogleFonts.poppins(
+                            color: Colors.black,
+                            fontSize: 15,
+                          ),
+                          textAlign: TextAlign.start,
                         ),
-                        textAlign: TextAlign.start,
-                      ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Connectez-vous',
+                            style: GoogleFonts.poppins(
+                              color: Colors.blue,
+                            ),
+                            textAlign: TextAlign.start,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_right,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
