@@ -1,6 +1,6 @@
-# twitter_clone
+# TILweet
 
-A new Flutter project.
+The clone application of twitter
 
 ## Getting Started
 
