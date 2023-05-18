@@ -7,15 +7,20 @@ class TextWidget extends StatelessWidget {
   double? size;
   Color color;
   FontWeight? fontWeight;
+  TextAlign? align;
   TextWidget(
-      {required this.text, required this.color, this.size, this.fontWeight});
+      {required this.text,
+      required this.color,
+      this.size,
+      this.fontWeight,
+      this.align});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Text(
         text,
-        textAlign: TextAlign.center,
+        textAlign: align,
         style: GoogleFonts.poppins(
           color: color,
           fontSize: size,
