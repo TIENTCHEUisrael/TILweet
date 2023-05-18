@@ -10,6 +10,16 @@ class AuthPage2 extends StatefulWidget {
 class _AuthPage2State extends State<AuthPage2> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(10),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

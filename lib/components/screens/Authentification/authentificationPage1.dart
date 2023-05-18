@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:twitter_clone/components/widgets/textWidget.dart';
 import 'package:twitter_clone/constant/colors.dart';
+import 'package:twitter_clone/components/routes/route_name.dart';
 
 class AuthPage1 extends StatefulWidget {
   const AuthPage1({super.key});
@@ -129,7 +130,9 @@ class _AuthPage1State extends State<AuthPage1> {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, authentificationAdd);
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: black,
                   fixedSize: const Size(300, 50),
@@ -164,10 +167,7 @@ class _AuthPage1State extends State<AuthPage1> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.symmetric(
-                  vertical: 5,
-                  horizontal: 14,
-                ),
+                margin: const EdgeInsets.only(top: 20, left: 14, right: 14),
                 child: Column(
                   children: [
                     Row(

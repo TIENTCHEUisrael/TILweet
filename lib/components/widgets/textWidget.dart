@@ -4,14 +4,11 @@ import '../../constant/colors.dart';
 
 class TextWidget extends StatelessWidget {
   String text;
-  double size;
+  double? size;
   Color color;
   FontWeight? fontWeight;
   TextWidget(
-      {required this.text,
-      required this.color,
-      required this.size,
-      this.fontWeight});
+      {required this.text, required this.color, this.size, this.fontWeight});
 
   @override
   Widget build(BuildContext context) {
