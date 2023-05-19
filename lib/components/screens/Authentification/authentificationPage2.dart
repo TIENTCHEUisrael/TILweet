@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:twitter_clone/components/widgets/textWidget.dart';
 import 'package:twitter_clone/constant/colors.dart';
 
+import '../../routes/route_name.dart';
+
 class AuthPage2 extends StatefulWidget {
   const AuthPage2({super.key});
 
@@ -150,6 +152,9 @@ class _AuthPage2State extends State<AuthPage2> {
                                     setState(() {
                                       _isfinish = true;
                                     });
+
+                                    Navigator.pushNamed(
+                                        context, authentificationAddlangue);
                                   }
                                 },
                                 child: Padding(
