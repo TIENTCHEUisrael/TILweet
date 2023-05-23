@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/components/widgets/textWidget.dart';
 import 'package:twitter_clone/constant/colors.dart';
@@ -74,12 +76,12 @@ class _AuthPage2State extends State<AuthPage2> {
                         controller: username,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Username et preusername',
-                          hintText: 'Username et préusername',
+                          labelText: 'Username',
+                          hintText: 'Username',
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "S'il vous plait entrer votre Username et preusername";
+                            return "S'il vous plait entrer votre Username";
                           }
                           return null;
                         },
@@ -154,12 +156,14 @@ class _AuthPage2State extends State<AuthPage2> {
                                     });
 
                                     Navigator.pushNamed(
-                                        context, authentificationAddlangue,
-                                        arguments: {
-                                          'username': username.text,
-                                          'password': password.text,
-                                          'email': telemail.text
-                                        });
+                                      context,
+                                      authentificationAddlangue,
+                                      arguments: {
+                                        'username': username.text,
+                                        'password': password.text,
+                                        'email': telemail.text
+                                      },
+                                    );
                                   }
                                 },
                                 child: Padding(
