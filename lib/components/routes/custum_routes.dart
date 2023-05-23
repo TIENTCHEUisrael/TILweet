@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/components/screens/Authentification/loginPage.dart';
 import 'package:twitter_clone/components/screens/homePages/homeScreen.dart';
 import '../screens/Authentification/authentificationPage2.dart';
 import '../../notfound.dart';
@@ -21,6 +22,10 @@ class CustomRoute {
         break;
       case homeRoute:
         r = MaterialPageRoute(builder: (_) => HomeScreen());
+        break;
+      case authentificationlog:
+        r = MaterialPageRoute(builder: (_) => LoginPage());
+        break;
     }
     return r;
   }

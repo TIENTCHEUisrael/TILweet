@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "686884662898",
+    "project_id": "tilweet-bc8f8",
+    "storage_bucket": "tilweet-bc8f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686884662898:android:4418cc2dc87651a1589ceb",
+        "android_client_info": {
+          "package_name": "com.example.twitter_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686884662898-s47qorbg0aao3h06ir6fovf1pmm3sjvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUpE2QGaayXajlaVIJ2KRLyQfGyg7LkPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686884662898-s47qorbg0aao3h06ir6fovf1pmm3sjvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

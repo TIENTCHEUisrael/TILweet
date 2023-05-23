@@ -43,6 +43,8 @@ class _AuthFinishState extends State<AuthFinish> {
         ),
       ),
       body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
@@ -106,7 +108,9 @@ class _AuthFinishState extends State<AuthFinish> {
                     Row(
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, authentificationlog);
+                          },
                           child: Text(
                             'Connectez-vous',
                             style: GoogleFonts.poppins(
