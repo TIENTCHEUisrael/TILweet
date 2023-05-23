@@ -6,7 +6,7 @@ import 'package:twitter_clone/constant/colors.dart';
 import '../../widgets/textWidget.dart';
 
 class AuthPage3 extends StatefulWidget {
-  const AuthPage3({super.key});
+  const AuthPage3();
 
   @override
   State<AuthPage3> createState() => _AuthPage3State();
@@ -17,6 +17,9 @@ class _AuthPage3State extends State<AuthPage3> {
   bool checkboxValue = false;
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+            <String, dynamic>{'username': '', 'password': '', 'email': ''})
+        as Map<String, dynamic>;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: white,
@@ -225,7 +228,10 @@ class _AuthPage3State extends State<AuthPage3> {
                             ),
                             backgroundColor: white,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, authentificationFinish);
+                          },
                           child: TextWidget(
                             text: "Passer pour le moment",
                             color: black,
@@ -241,7 +247,14 @@ class _AuthPage3State extends State<AuthPage3> {
                           ),
                           onPressed: () {
                             Navigator.pushNamed(
-                                context, authentificationFinish);
+                              context,
+                              authentificationFinish,
+                              arguments: {
+                                'username': arguments['username'],
+                                'password': arguments['password'],
+                                'email': arguments['email']
+                              },
+                            );
                           },
                           child: TextWidget(
                             text: "Suivant",

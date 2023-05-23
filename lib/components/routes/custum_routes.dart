@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/components/screens/Authentification/loginPage.dart';
 import 'package:twitter_clone/components/screens/homePages/homeScreen.dart';
@@ -12,19 +13,31 @@ class CustomRoute {
     var r = MaterialPageRoute(builder: (_) => NotFoundPage());
     switch (settings.name) {
       case authentificationAdd:
-        r = MaterialPageRoute(builder: (_) => AuthPage2());
+        r = MaterialPageRoute(
+          builder: (_) => AuthPage2(),
+        );
         break;
       case authentificationAddlangue:
-        r = MaterialPageRoute(builder: (_) => AuthPage3());
+        r = MaterialPageRoute(
+          settings: settings,
+          builder: (_) => AuthPage3(),
+        );
         break;
       case authentificationFinish:
-        r = MaterialPageRoute(builder: (_) => AuthFinish());
+        r = MaterialPageRoute(
+          settings: settings,
+          builder: (_) => AuthFinish(),
+        );
         break;
       case homeRoute:
-        r = MaterialPageRoute(builder: (_) => HomeScreen());
+        r = MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+        );
         break;
       case authentificationlog:
-        r = MaterialPageRoute(builder: (_) => LoginPage());
+        r = MaterialPageRoute(
+          builder: (_) => LoginPage(),
+        );
         break;
     }
     return r;

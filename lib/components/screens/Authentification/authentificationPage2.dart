@@ -14,15 +14,15 @@ class AuthPage2 extends StatefulWidget {
 class _AuthPage2State extends State<AuthPage2> {
   bool _isfinish = false;
   final _formKey = GlobalKey<FormState>();
-  final nom = TextEditingController();
+  final username = TextEditingController();
   final telemail = TextEditingController();
-  final naissance = TextEditingController();
+  final password = TextEditingController();
 
   void zero() {
     setState(() {
-      nom.clear();
+      username.clear();
       telemail.clear();
-      naissance.clear();
+      password.clear();
     });
   }
 
@@ -71,15 +71,15 @@ class _AuthPage2State extends State<AuthPage2> {
                     Container(
                       margin: const EdgeInsets.only(top: 25),
                       child: TextFormField(
-                        controller: nom,
+                        controller: username,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Nom et prenom',
-                          hintText: 'Nom et prénom',
+                          labelText: 'Username et preusername',
+                          hintText: 'Username et préusername',
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "S'il vous plait entrer votre Nom et prenom";
+                            return "S'il vous plait entrer votre Username et preusername";
                           }
                           return null;
                         },
@@ -117,15 +117,15 @@ class _AuthPage2State extends State<AuthPage2> {
                     Container(
                       margin: const EdgeInsets.only(top: 30),
                       child: TextFormField(
-                        controller: naissance,
+                        controller: password,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Date de naissance',
-                          hintText: 'Date de naissance',
+                          labelText: 'Password',
+                          hintText: 'Password',
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "S'il vous plait entrer votre Date de naissance";
+                            return "S'il vous plait entrer votre password";
                           }
                           return null;
                         },
@@ -154,7 +154,12 @@ class _AuthPage2State extends State<AuthPage2> {
                                     });
 
                                     Navigator.pushNamed(
-                                        context, authentificationAddlangue);
+                                        context, authentificationAddlangue,
+                                        arguments: {
+                                          'username': username.text,
+                                          'password': password.text,
+                                          'email': telemail.text
+                                        });
                                   }
                                 },
                                 child: Padding(

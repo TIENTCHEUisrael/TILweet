@@ -6,7 +6,7 @@ import 'package:twitter_clone/constant/colors.dart';
 import '../../routes/route_name.dart';
 
 class AuthFinish extends StatefulWidget {
-  const AuthFinish({super.key});
+  const AuthFinish();
 
   @override
   State<AuthFinish> createState() => _AuthFinishState();
@@ -15,6 +15,9 @@ class AuthFinish extends StatefulWidget {
 class _AuthFinishState extends State<AuthFinish> {
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+            <String, dynamic>{'username': '', 'password': '', 'email': ''})
+        as Map<String, dynamic>;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,
@@ -71,6 +74,9 @@ class _AuthFinishState extends State<AuthFinish> {
               ),
               ElevatedButton(
                 onPressed: () {
+                  print(arguments['username'] +
+                      arguments['password'] +
+                      arguments['email']);
                   Navigator.pushNamed(context, homeRoute);
                 },
                 style: ElevatedButton.styleFrom(

@@ -38,15 +38,12 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   continueStep() {
-    if (currentStep <= 1) {
+    if (currentStep < 1) {
       setState(() {
         currentStep = currentStep + 1;
         ispasswordStep = true;
       });
     }
-    setState(() {
-      currentStep == 1;
-    });
   }
 
   cancelStep() {
@@ -108,6 +105,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         backgroundColor: white,
         elevation: 0,
+        leading: BackButton(color: black),
         title: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -144,9 +142,8 @@ class _LoginPageState extends State<LoginPage> {
         steps: [
           Step(
             title: TextWidget(
-              text: 'Username or email',
+              text: 'Username/email',
               color: black,
-              size: 15,
             ),
             content: Container(
               height: MediaQuery.of(context).size.height / 1.5,
@@ -194,7 +191,6 @@ class _LoginPageState extends State<LoginPage> {
             title: TextWidget(
               text: 'Password',
               color: black,
-              size: 15,
             ),
             content: Container(
               height: MediaQuery.of(context).size.height / 1.5,
