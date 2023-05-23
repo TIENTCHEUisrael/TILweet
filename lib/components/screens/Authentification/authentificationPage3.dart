@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:twitter_clone/components/routes/route_name.dart';
 import 'package:twitter_clone/constant/colors.dart';
 
 import '../../widgets/textWidget.dart';
@@ -238,7 +239,10 @@ class _AuthPage3State extends State<AuthPage3> {
                             ),
                             backgroundColor: black,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, authentificationFinish);
+                          },
                           child: TextWidget(
                             text: "Suivant",
                             color: white,

@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:twitter_clone/components/widgets/textWidget.dart';
 import 'package:twitter_clone/constant/colors.dart';
-import 'package:twitter_clone/components/routes/route_name.dart';
 
-class AuthPage1 extends StatefulWidget {
-  const AuthPage1({super.key});
+import '../../routes/route_name.dart';
+
+class AuthFinish extends StatefulWidget {
+  const AuthFinish({super.key});
 
   @override
-  State<AuthPage1> createState() => _AuthPage1State();
+  State<AuthFinish> createState() => _AuthFinishState();
 }
 
-class _AuthPage1State extends State<AuthPage1> {
+class _AuthFinishState extends State<AuthFinish> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
         backgroundColor: white,
         elevation: 0,
@@ -43,9 +43,7 @@ class _AuthPage1State extends State<AuthPage1> {
         ),
       ),
       body: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 15,
-        ),
+        margin: const EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -54,87 +52,27 @@ class _AuthPage1State extends State<AuthPage1> {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                  bottom: 80,
+                  bottom: 60,
                   left: 15,
                   right: 15,
+                  top: 20,
                 ),
                 child: Text(
                   "Découvrez ce qui se passe dans le monde en temps réel",
                   style: GoogleFonts.poppins(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize: 35,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.start,
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: white,
-                  fixedSize: const Size(300, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                      50,
-                    ),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 5),
-                      child: Image.asset(
-                        "assets/images/png/google.png",
-                        height: 20,
-                      ),
-                    ),
-                    TextWidget(
-                      color: Colors.black,
-                      text: "Continuez avec Google",
-                      size: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(
-                  vertical: 5,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(
-                        right: 2,
-                      ),
-                      height: 1,
-                      width: 20,
-                      color: black,
-                    ),
-                    TextWidget(
-                      text: "Ou",
-                      color: black,
-                      size: 13,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(
-                        left: 2,
-                      ),
-                      height: 1,
-                      width: 20,
-                      color: black,
-                    ),
-                  ],
-                ),
-              ),
-              ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, authentificationAdd);
+                  Navigator.pushNamed(context, homeRoute);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: black,
+                  backgroundColor: Colors.blue,
                   fixedSize: const Size(300, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
@@ -144,30 +82,13 @@ class _AuthPage1State extends State<AuthPage1> {
                 ),
                 child: TextWidget(
                   color: white,
-                  text: "Créer un compte",
+                  text: "Créer votre compte",
                   size: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(
-                  top: 20,
-                  left: 15,
-                  right: 15,
-                  bottom: 5,
-                ),
-                child: Expanded(
-                  child: Text(
-                    "En vous inscrivant vous acceptez nos condition d'Utilisation,notre politique de confidentialité et notre utilisation des cookies",
-                    style: GoogleFonts.poppins(
-                      color: Colors.black,
-                      fontSize: 13,
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20, left: 14, right: 14),
+                margin: const EdgeInsets.only(top: 150, left: 14, right: 14),
                 child: Column(
                   children: [
                     Row(
